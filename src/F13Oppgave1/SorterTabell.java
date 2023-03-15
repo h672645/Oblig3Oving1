@@ -1,4 +1,4 @@
-package no.hvl.dat102;
+package F13Oppgave1;
 
 import java.util.Random;
 
@@ -55,24 +55,9 @@ public class SorterTabell {
 	}
 	
 	public static <T extends Comparable<? super T>> void sorteringVedInsetting(T[] a) {
-//		for (int i = 0 + 1; i <= a.length; i++) {
-//			T tmp = a[i];
-//			int j = i - 1; // siste i sortert del
-//			boolean ferdig = false;
-//
-//			while (!ferdig && j >= 0) {
-//				
-//				if (tmp.compareTo(a[j]) < 0) {
-//					a[j + 1] = a[j];
-//					j--;
-//				} else {
-//					ferdig = true;
-//				}
-//
-//			}
-//
-//			a[j + 1] = tmp;
-//		}
+	
+		
+		
 	}
 
 }
