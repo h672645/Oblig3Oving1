@@ -56,7 +56,7 @@ public class SorterTabell {
 	
 	public static <T extends Comparable<? super T>> void sorteringVedInsetting(T[] a) {
 	
-		
+		//Modifiser koden slik at i stedet for å sette inn ett element om gangen, setter vi inn to. 
 		
 	}
 

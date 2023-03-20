@@ -1,5 +1,5 @@
 package no.hvl.dat102.sortering;
 
-public class Utvalgssortering {
+public class MergeSort {
 
 }
