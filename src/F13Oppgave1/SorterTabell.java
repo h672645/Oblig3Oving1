@@ -5,9 +5,22 @@ import java.util.Random;
 public class SorterTabell {
 	// Byter om a[i] og a[j]. Antar at b�de i og j er lovlege indeksar i tabellen.
 	private static void swap(Object[] a, int i, int j) {
+		if (i == j) {
+	        return;
+	    }
 		Object temp = a[i];
 		a[i] = a[j];
-		a[j] = temp;
+	    a[j] = temp;
+	}
+	
+	public static <T extends Comparable<? super T>> void sorter(T[] a, int i, int j) {
+		
+		if(a[i].compareTo(a[j])>0) {
+			T temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+		
 	}
 
 	// Utvalgssortering / Plukksortering (DAT100) (Selction sort)
@@ -58,15 +71,33 @@ public class SorterTabell {
 		
 		for(int usortert = 2; usortert < a.length; usortert+=2) {
 			
+			if (a[usortert - 1].compareTo(a[usortert - 2]) < 0) {
+	            T tmp = a[usortert - 1];
+	            a[usortert - 1] = a[usortert - 2];
+	            a[usortert - 2] = tmp;
+	        }
+			
+			T temp = a[usortert];
 			int j = usortert;
 			
-			while(j > 0 && a[j-1].compareTo(a[j]) > 0) {
-				swap(a, j - 1, j);
-				swap(a, j, j + 1);
+			if(j+1 == a.length) {
+				break;
+			}
+			while(j > 1 && (a[j+1].compareTo(a[j-1]) < 0)) {
+				
+				swap(a, j, j-2);
+				swap(a, j+1, j-1);
+				
 				j -= 2;
 			}
+	    
 		}
-		
+		System.out.println("----------------");
+		System.out.print("Innsetting av tall-par sortert etter høgste:\n");
+		print(a);
+		System.out.println("----------------");
+		SorterTabell.sorteringVedInsetting(a, a.length);
+		System.out.print("Sortert med vanlig insertion-sort:\n");
 		print(a);
 	}
 
@@ -75,7 +106,7 @@ public class SorterTabell {
 		for(int i = 0; i < a.length; i++) {
 			
 			if(i == a.length-1) {
-				System.out.print(a[i]);
+				System.out.println(a[i]);
 			} else {
 				System.out.print(a[i] + ",");
 			}
