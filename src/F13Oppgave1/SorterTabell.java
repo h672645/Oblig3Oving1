@@ -54,10 +54,34 @@ public class SorterTabell {
 		}
 	}
 	
-	public static <T extends Comparable<? super T>> void sorteringVedInsetting(T[] a) {
-	
-		//Modifiser koden slik at i stedet for å sette inn ett element om gangen, setter vi inn to. 
+	public static <T extends Comparable<? super T>> void sorteringVedInsettingToOmGangen(T[] a) {
 		
+		for(int usortert = 2; usortert < a.length; usortert+=2) {
+			
+			int j = usortert;
+			
+			while(j > 0 && a[j-1].compareTo(a[j]) > 0) {
+				swap(a, j - 1, j);
+				swap(a, j, j + 1);
+				j -= 2;
+			}
+		}
+		
+		print(a);
 	}
 
+	public static <T> void print(T[] a) {
+		System.out.print("Test: ");
+		for(int i = 0; i < a.length; i++) {
+			
+			if(i == a.length-1) {
+				System.out.print(a[i]);
+			} else {
+				System.out.print(a[i] + ",");
+			}
+			
+		}
+		System.out.println();
+	}
+	
 }

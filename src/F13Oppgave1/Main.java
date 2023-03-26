@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
-		Integer[] tab = { 7, 4, 1, 9, 5, 2 };
+		Integer[] tab = { 7, 4, 12311, 9, 57, 2 , 13, 3, 6, 111, 2, -3, 15, 9, 532, 115, -22};
 		// String[] tab2 = {"b", "a"};
 
 		// SorterTabell.utvalgssortering(tab, tab.length);
@@ -17,7 +17,7 @@ public class Main {
 		System.out.println();
 
 		Random tilfeldig = new Random();
-		int n = 32000;
+		int n = 10;
 		int antal = 10;
 		Integer[][] a = new Integer[antal][n];
 		// set inn tilfeldige heiltal i alle rekker
@@ -27,15 +27,20 @@ public class Main {
 			}
 		}
 
-		
+		// start tidsmåling
 		long start1 = System.nanoTime();
 		
-		// start tidsmåling
+		
 		for (int i = 0; i < antal; i++) {
-			SorterTabell.sorteringVedInsetting(a[i], 16000);
+			SorterTabell.sorteringVedInsetting(a[i], 1);
 		}
-		// slutt tidsmåling
 
+		// slutt tidsmåling
+		long end1 = System.nanoTime();
+		
+		
+		
+		long sec = (end1 - start1) / 1000000000;
 		for (Integer[] i : a) {
 
 			for (int j : i) {
@@ -44,10 +49,19 @@ public class Main {
 
 			}
 		}
+		System.out.println("Elapsed Time in nano seconds: " + sec);
 
-		long end1 = System.nanoTime();
+		//----------------------------------------------------------//
 		
-		long sec = (end1 - start1) / 1000000000;
+		SorterTabell.sorteringVedInsettingToOmGangen(tab);
+		
+		start1 = System.nanoTime();
+		
+		for (int i = 0; i < antal; i++) {
+			SorterTabell.sorteringVedInsettingToOmGangen(a[i]);
+		}
+
+		sec = (System.nanoTime() - start1)/1000000;
 		System.out.println("Elapsed Time in nano seconds: " + sec);
 
 	}
