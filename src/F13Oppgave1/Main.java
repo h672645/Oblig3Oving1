@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
-		Integer[] tab = { 7, 4, 12311, 9, 57, 2 , 13, 3, 6, 111, 2, -3, 15, 9, 532, 115, 1};
+		Integer[] tab = { 7, 4, 12311, 9, 57, 2 , 13, 3, 6, 111, 2, -3, 15, 9, 532, 115};
 		// String[] tab2 = {"b", "a"};
 
 		// SorterTabell.utvalgssortering(tab, tab.length);

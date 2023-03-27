@@ -6,8 +6,10 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) {
+		Integer[] tab = { 7, 4, 12311, 9, 57, 2 , 13, 3, 6, 111, 2, -3, 15, 9, 532, 115, 1};
+		
 		Random tilfeldig = new Random();
-		int n = 10;
+		int n = 32000;
 		int antal = 1;
 		Integer[][] a = new Integer[antal][n];
 		// set inn tilfeldige heiltal i alle rekker
@@ -17,13 +19,20 @@ public class Main {
 			}
 		}
 
-		
+		// start tidsmåling
 		long start1 = System.nanoTime();
 		
-		// start tidsmåling
+		
 		for (int i = 0; i < antal; i++) {
-			//
+			
+			InsertionSort.insertionSort(a[i]);
+			
 		}
+		
+		long end1 = System.nanoTime();
+		
+		long sec = (end1 - start1) / 1000000000;
+
 		// slutt tidsmåling
 
 		for (Integer[] i : a) {
@@ -35,11 +44,12 @@ public class Main {
 			}
 		}
 
-		long end1 = System.nanoTime();
-		
-		long sec = (end1 - start1) / 1000000000;
 		System.out.println("Elapsed Time in nano seconds: " + sec);
-
+		
+		InsertionSort.insertionSort(tab);
+		for(int i : tab) {
+			System.out.print(i + " ");
+		}
 	}
 
 }
