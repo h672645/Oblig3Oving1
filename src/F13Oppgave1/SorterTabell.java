@@ -77,19 +77,24 @@ public class SorterTabell {
 	            a[usortert - 2] = tmp;
 	        }
 			
-			T temp = a[usortert];
 			int j = usortert;
 			
 			if(j+1 == a.length) {
 				break;
 			}
-			while(j > 1 && (a[j+1].compareTo(a[j-1]) < 0)) {
-				
-				swap(a, j, j-2);
-				swap(a, j+1, j-1);
-				
-				j -= 2;
-			}
+			
+			boolean ferdig = false;
+						
+			while (!ferdig && j > 1) {
+	            if (a[j+1].compareTo(a[j-1]) < 0) {
+	            	swap(a, j-1, j+1);
+	            	swap(a, j-2, j);
+	            	
+	            	j -=2;
+	            } else {
+	            	ferdig = true;
+	            }
+	        }
 	    
 		}
 		System.out.println("----------------");
