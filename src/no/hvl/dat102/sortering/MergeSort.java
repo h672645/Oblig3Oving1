@@ -24,7 +24,7 @@ public class MergeSort {
 		int j = midtpunkt;
 		int tellar = 0;
 		
-		int[] temp = new int[slutt - start];
+		Integer[] temp = new Integer[slutt - start];
 		
 		while(i < midtpunkt && j < slutt) {
 			temp[tellar++] = a[i] <= a[j] ? a[i++] : a[j++];
