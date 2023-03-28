@@ -1,4 +1,4 @@
-package no.hvl.dat102.main;
+	package no.hvl.dat102.main;
 import no.hvl.dat102.sortering.*;
 
 import java.util.Random;
@@ -10,7 +10,7 @@ public class Main {
 		
 		Random tilfeldig = new Random();
 		int n = 32000;
-		int antal = 1;
+		int antal = 10;
 		Integer[][] a = new Integer[antal][n];
 		// set inn tilfeldige heiltal i alle rekker
 		for (int i = 0; i < antal; i++) {
@@ -46,7 +46,7 @@ public class Main {
 
 		System.out.println("Elapsed Time in nano seconds: " + sec);
 		
-		MergeSort.mergeSort(tab, 0, tab.length);
+		QuickSort.quickSort(tab, 0, tab.length);
 		for(int i : tab) {
 			System.out.print(i + " ");
 		}
