@@ -10,7 +10,7 @@ public class Main {
 		
 		Random tilfeldig = new Random();
 		int n = 32000;
-		int antal = 10;
+		int antal = 1;
 		Integer[][] a = new Integer[antal][n];
 		// set inn tilfeldige heiltal i alle rekker
 		for (int i = 0; i < antal; i++) {
