@@ -1,4 +1,4 @@
-package F13Oppgave1;
+package no.hvl.dat102.Oppgave1;
 
 import java.util.Random;
 

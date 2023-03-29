@@ -5,14 +5,14 @@ import java.util.Formatter;
 
 import java.util.Random;
 
-public class Main {
+public class oppgave2 {
 
 	public static void main(String[] args) {
 		Integer[] tab = { 7, 4, 12311, 9, 57, 2, 13, 3, 6, 111, 2, -3, 15, 9, 532, 115 };
 
 		int n = 32000;
 		int kjoringer = 3;
-		int antal = 2;
+		int antal = 1;
 		float start;
 		float end;
 		float sec;
@@ -20,7 +20,7 @@ public class Main {
 		Integer[][] a = lagMatrise(n, antal);
 
 		//SelectionSort
-		fmt.format("\nSelectionSort:\n %3s %13s %12s %20s\n", "n", "#Målinger", "Tid", "Teoretisk Tid");
+		fmt.format("SelectionSort:\n %3s %13s %12s %15s\n", "n", "#Målinger", "Tid", "C");
 		for (int j = 0; j < kjoringer; j++) {
 			a = lagMatrise(n, antal);
 			start = System.nanoTime();
@@ -36,7 +36,7 @@ public class Main {
 		n = 32000;
 		
 		// InsertionSort
-		fmt.format("\nInsertionSort:\n %3s %13s %12s %20s\n", "n", "#Målinger", "Tid", "Teoretisk Tid");
+		fmt.format("\nInsertionSort:\n %3s %13s %12s %15s\n", "n", "#Målinger", "Tid", "C");
 		for (int j = 0; j < kjoringer; j++) {
 			a = lagMatrise(n, antal);
 			start = System.nanoTime();
@@ -52,7 +52,7 @@ public class Main {
 		n = 32000;
 
 		// QuickSort
-		fmt.format("\nQuickSort:\n %3s %13s %12s %20s\n", "n", "#Målinger", "Tid", "Teoretisk Tid");
+		fmt.format("\nQuickSort:\n %3s %13s %12s %15s\n", "n", "#Målinger", "Tid", "C");
 		for (int j = 0; j < kjoringer; j++) {
 			a = lagMatrise(n, antal);
 			start = System.nanoTime();
@@ -68,7 +68,7 @@ public class Main {
 		n = 32000;
 
 		//MergeSort
-		fmt.format("\nMergeSort:\n %3s %13s %12s %20s\n", "n", "#Målinger", "Tid", "Teoretisk Tid");
+		fmt.format("\nMergeSort:\n %3s %13s %12s %15s\n", "n", "#Målinger", "Tid", "C");
 		for (int j = 0; j < kjoringer; j++) {
 			a = lagMatrise(n, antal);
 			start = System.nanoTime();
@@ -101,7 +101,9 @@ public class Main {
 
 	public static Formatter printMatrise(Integer[][] a, Formatter fmt, int n, int antal, float tid) {
 
-		fmt.format("%2s %8s %20s %16s\n", n, antal, tid / antal, (tid / antal) / n);
+		float tidsgjennomsnitt = tid/antal;
+		float constant = (float) (tidsgjennomsnitt/n);
+		fmt.format("%2s %8s %20s %16s\n", n, antal, tidsgjennomsnitt, constant);
 
 		return fmt;
 	}
