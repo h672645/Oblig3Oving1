@@ -23,7 +23,7 @@ public class Main {
 		// set inn tilfeldige heiltal i alle rekker
 		for (int i = 0; i < antal; i++) {
 			for (int j = 0; j < n; j++) {
-				a[i][j] = tilfeldig.nextInt();
+				a[i][j] = tilfeldig.nextInt(10);
 			}
 		}
 
