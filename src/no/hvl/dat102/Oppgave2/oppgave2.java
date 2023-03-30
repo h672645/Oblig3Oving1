@@ -1,9 +1,10 @@
 package no.hvl.dat102.Oppgave2;
 
-import no.hvl.dat102.sortering.*;
 import java.util.Formatter;
 
 import java.util.Random;
+
+import no.hvl.dat102.Oppgave1.Sortering.*;
 
 public class oppgave2 {
 

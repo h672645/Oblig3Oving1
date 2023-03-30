@@ -2,7 +2,7 @@ package no.hvl.dat102.Oppgave3.test;
 
 import java.util.Random;
 
-import no.hvl.dat102.sortering.MergeSort;
+import no.hvl.dat102.Oppgave1.Sortering.MergeSort;
 
 public class SearchMethods {
 

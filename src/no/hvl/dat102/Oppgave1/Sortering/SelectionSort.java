@@ -1,4 +1,4 @@
-package no.hvl.dat102.sortering;
+package no.hvl.dat102.Oppgave1.Sortering;
 
 public class SelectionSort {
 
