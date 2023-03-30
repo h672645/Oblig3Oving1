@@ -11,39 +11,40 @@ class SearchMethodTests {
 	Random rn = new Random();
 	int rndNumber = 97;
 	int n = 50000000;
+	Integer[] tabTom = {};
 	
 	//Oppretter tabeller med helltall mellom 0 og 99;
 	Integer[] tabUsortert = SearchMethods.lagTabellUsortert(n);
 	Integer[] tabSortert =  SearchMethods.lagTabellSortert(n);
 	
 	@Test
-	void SortedTestTalletFinnes() {
-		boolean sjekk = sortedLinearSearch(tabSortert, rndNumber);
-		assertTrue(sjekk);
+	void sortedLinearSearchFinnes() {
+		assertTrue(sortedLinearSearch(tabSortert, rndNumber));
 	}
 	
 	@Test
-	void SortedTestTalletFinnesRakst() {
-		boolean sjekk = sortedLinearSearch(tabSortert, 20);
-		assertTrue(sjekk);
+	void sortedLinearSearchFinnesRakst() {
+		assertTrue(sortedLinearSearch(tabSortert, 20));
 	}
 	
 	@Test
-	void SortedTestTalletFinnesIkke() {
-		boolean sjekk = sortedLinearSearch(tabSortert, 100);
-		assertFalse(sjekk);
+	void sortedLinearSearchFinnesIkke() {
+		assertFalse(sortedLinearSearch(tabSortert, 100));
 	}
 	
 	@Test
-	void UnsortedTalletFinnes() {
-		boolean sjekk = linearSearch(tabUsortert, rndNumber);
-		assertTrue(sjekk);
+	void linearSearchTomTabell() {
+		assertFalse(linearSearch(tabTom, 0));
 	}
 	
 	@Test
-	void UnsortedTestFinnesIkke() {
-		boolean sjekk = linearSearch(tabUsortert, 100);
-		assertFalse(sjekk);
+	void linearSearchFinnes() {
+		assertTrue(linearSearch(tabUsortert, rndNumber));
+	}
+	
+	@Test
+	void linearSearchFinnesIkke() {
+		assertFalse(linearSearch(tabUsortert, 100));
 	}
 
 	@Test
@@ -55,4 +56,10 @@ class SearchMethodTests {
 	void BinarySearchFinnesIkke() {
 		assertFalse(binarySearch(tabSortert, 100));
 	}
+	
+	@Test
+	void BinarySearchTomTabell() {
+		assertFalse(binarySearch(tabTom,0));
+	}
+	
 }
