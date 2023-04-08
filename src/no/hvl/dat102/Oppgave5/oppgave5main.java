@@ -10,7 +10,7 @@ public class oppgave5main {
 //		Formatter fmt = new Formatter();
 		
 		int antallNoder = 8191;
-		int antallTre = 1000;
+		int antallTre = 100;
 		int maksHogde = -1;
 		int minHogde = 1000;
 		double gjennomsnittHogde = 0;
